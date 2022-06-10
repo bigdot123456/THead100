@@ -4,21 +4,24 @@
 // export VERDI_HOME=/usr/synopsys/vc_static-O-2018.09-SP2-2/verdi
 // export VERDI_HOME=/eda/snps/VERDI
 
-// export wujian100_open_PATH=/mnt/e/gitcpuCore/cpuCore/arm/cortex-M0/AT510-BU-50000-r0p0-02rel0
-// export wujian100_open_PATH=/home/bigdot/git/cpuCore/cpuCore/arm/cortex-M0/AT510-BU-50000-r0p0-02rel0
-// export wujian100_open_PATH=E:/git/cpuCore/cpuCore/arm/cortex-M0/AT510-BU-50000-r0p0-02rel0
+// export wujian100_open_PATH=/mnt/e/gitwujian100_open
+// export wujian100_open_PATH=/home/bigdot/git/wujian100_open
+// export wujian100_open_PATH=E:/git/wujian100_open
 // export TESTFILE=$wujian100_open_PATH/filelist.f
 
-// set wujian100_open_PATH=E:\git\cpuCore\cpuCore\arm\cortex-M0\AT510-BU-50000-r0p0-02rel0
-// set TESTFILE=wujian100_open_PATH/filelist.f
+// set wujian100_open_PATH=E:\git\wujian100_open
+// set wujian100_open_PATH=E:/git/wujian100_open
+// set TESTFILE=$wujian100_open_PATH/filelist.f
 
 // +dvt_init
-// +dvt_setenv+wujian100_open_PATH=E:\git\cpuCore\cpuCore\arm\cortex-M0\AT510-BU-50000-r0p0-02rel0
+// +dvt_setenv+wujian100_open_PATH=E:\git\wujian100_open
 // +dvt_setenv+TESTFILE=$wujian100_open_PATH/filelist.f
 // -f $TESTFILE
 
 // ncverilog -f $TESTFILE +access+wr
+// ncverilog -f $wujian100_open_PATH/filelist.f  +access+
 // qverilog -f $TESTFILE +access+
+// qverilog -f $wujian100_open_PATH/filelist.f  +access+
 
 // export PLATFORM=linux64
 // qverilog -f $TESTFILE +access+wr +notimingchecks +nospecify -R -pli $(VERDI_HOME)/share/PLI/MODELSIM/$(PLATFORM)/novas_fli.so
@@ -38,8 +41,9 @@
 // verdi -2012 -y ./lib -y ./tb/lib -y ./lib/gtech -y ./lib/dw_foundation -y ./lib/mem -y ./lib/amba +incdir+./rtl+./tb+./lib+./lib/common+./lib/dw_foundation+./lib/amba+./lib/fpga+./lib/common+./tb/inc +libext+.v+.h+.inc+ -f $TESTFILE +define+fifotype1
 
 +incdir+$wujian100_open_PATH/soc/params
-$wujian100_open_PATH/soc/ahb_matrix_top.v
+$wujian100_open_PATH/tb/tb.v
 $wujian100_open_PATH/soc/wujian100_open_top.v
+$wujian100_open_PATH/soc/ahb_matrix_top.v
 $wujian100_open_PATH/soc/smu_top.v
 $wujian100_open_PATH/soc/sms.v
 $wujian100_open_PATH/soc/ls_sub_top.v
@@ -76,7 +80,6 @@ $wujian100_open_PATH/soc/sim_lib/PAD_OSC_IO.v
 $wujian100_open_PATH/soc/sim_lib/STD_CELL.v
 $wujian100_open_PATH/soc/sim_lib/fpga_byte_spram.v
 $wujian100_open_PATH/soc/sim_lib/fpga_spram.v
-$wujian100_open_PATH/tb/tb.v
 $wujian100_open_PATH/tb/vlog_tb_utils.v
 $wujian100_open_PATH/tb/busmnt.v
 $wujian100_open_PATH/tb/virtual_counter.v

@@ -26,11 +26,11 @@ module wujian100_open_tb ();
 
 `define CLKMUX_ELS_CLK_DURATION 15258.789
 
-`ifdef iverilog
+//`ifdef iverilog
   integer FILE;
-`else
-  static integer FILE;
-`endif
+//`else
+//  static integer FILE;
+//`endif
 
 reg     [31:0]  cpuclk_counter;           
 reg             i_ext_pad_clkmux_ehs_clk; 
@@ -258,11 +258,11 @@ begin : load_program
 integer j;
 integer k;
   reg [31:0] one_word;
-`ifdef iverilog
-  reg [31:0]  temp_mem[16384];
-`else
-  reg [31:0]  temp_mem[integer];
-`endif
+//`ifdef iverilog
+  reg [31:0]  temp_mem[16384*2-1:0];
+//`else
+//  reg [31:0]  temp_mem[integer];
+//`endif
   $readmemh("test.pat", temp_mem);
    @( posedge PI_SOC_RST_B);
  for(k=0; k<32'h4000; k=k+1)

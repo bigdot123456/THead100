@@ -9,3 +9,7 @@ cortexm0ds_logic.v
 *.out
 debussy.exeLog/*
 debussy.exeLog
+inca_libs
+INCA*
+work
+vsim_*
