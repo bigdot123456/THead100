@@ -38,5 +38,6 @@ $wujian100_open_PATH/soc/sim_lib/STD_CELL.v
 $wujian100_open_PATH/soc/sim_lib/fpga_byte_spram.v
 $wujian100_open_PATH/soc/sim_lib/fpga_spram.v
 $wujian100_open_PATH/tb/tb.v
+$wujian100_open_PATH/tb/vlog_tb_utils.v
 $wujian100_open_PATH/tb/busmnt.v
 $wujian100_open_PATH/tb/virtual_counter.v

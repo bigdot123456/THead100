@@ -317,19 +317,20 @@ end
 busmnt x_busmnt();
 virtual_counter  x_virtual_counter ();
 
-`ifndef NO_DUMP
-initial
-begin
-   $display("######time:%d, Dump start######",$time);
-////Dump fsdb should set $g_novas_pli in run_case
-//   $fsdbDumpfile("vg_dump.fsdb");
-//   $fsdbDumpon;
-//   $fsdbDumpvars();
-   $dumpfile("test.vcd");
-   $dumpvars;
-end
-`endif
+//`ifndef NO_DUMP
+//initial
+//begin
+//   $display("######time:%d, Dump start######",$time);
+//////Dump fsdb should set $g_novas_pli in run_case
+////   $fsdbDumpfile("vg_dump.fsdb");
+////   $fsdbDumpon;
+////   $fsdbDumpvars();
+//   $dumpfile("test.vcd");
+//   $dumpvars;
+//end
+//`endif
 
+vlog_tb_utils u_my_vlog_tb_utils();
 
 endmodule
 
