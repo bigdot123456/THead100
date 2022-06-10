@@ -245,8 +245,8 @@ if($s_vcs) {
 	print "cmd: vcs +v2k -kdb -lca -Mupdate -sverilog -full64 +fsdb  $mnt_sim $dump_sim +nospecify +notimingchecks -timescale=1ns/100ps  $top_mod   $wujian100_open_PATH/workdir/$had_v $vcs_incdir $g_vlib_path  $PLItab  ";
 	!system("vcs +v2k -kdb -lca -Mupdate -sverilog -full64  +fsdb $mnt_sim $dump_sim +nospecify +notimingchecks -timescale=1ns/100ps  $top_mod   $wujian100_open_PATH/workdir/$had_v $vcs_incdir $g_vlib_path  $PLItab  ") or die "can't run VCS";}
 elsif($s_iverilog){
-	print "cmd: iverilog -o test.vvp -Diverilog=1 -g2012 ../tb/busmnt.v  ../tb/tb.v ../tb/virtual_counter.v -f ../soc/wujian100_open_syn_for_iverilog.filelist -f ../soc/wujian100_open_lib_for_iverilog.filelist ";
-	!system("iverilog -o test.vvp -Diverilog=1 -g2012 ../tb/busmnt.v  ../tb/tb.v ../tb/virtual_counter.v -f ../soc/wujian100_open_syn_for_iverilog.filelist -f ../soc/wujian100_open_lib_for_iverilog.filelist ") or die "can't run iverilog";
+	print "cmd: iverilog -o test.vvp -Diverilog=1 -g2012 ../tb/busmnt.v  ../tb/tb.v ../tb/virtual_counter.v -c ../soc/wujian100_open_syn_for_iverilog.filelist -c ../soc/wujian100_open_lib_for_iverilog.filelist ";
+	!system("iverilog -o test.vvp -Diverilog=1 -g2012 ../tb/busmnt.v  ../tb/tb.v ../tb/virtual_counter.v -c ../soc/wujian100_open_syn_for_iverilog.filelist -c ../soc/wujian100_open_lib_for_iverilog.filelist ") or die "can't run iverilog";
         !system("vvp test.vvp") or die "can't run vvp";
 }
 else{
