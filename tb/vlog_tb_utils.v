@@ -14,9 +14,9 @@ module vlog_tb_utils;
 			$finish;
 		end
 
+`ifndef NO_DUMP
 	//FIXME: Add more options for VCD logging
 	reg [MAX_STRING_LEN*CHAR_WIDTH-1:0] testcase;
-
 	initial begin
 		#1;
 		if($test$plusargs("fsdb")) begin
@@ -31,6 +31,20 @@ module vlog_tb_utils;
 
 		end
 	end
+	
+	initial begin
+		#1;
+		$display("Start Recording Waveform in FSDB format with cli +fsdb! If not OK, open vlog_tb_utils.v +65!");
+	//$fsdbDumpfile("dump.fsdb");
+	//$fsdbDumpvars(`dump_level);
+	end
+`else
+	initial begin
+		#1;
+		$display("No Recording action! If not OK, open vlog_tb_utils.v +44 or sim with option +vcd !");
+	//$fsdbDumpfile("dump.fsdb");
+	//$fsdbDumpvars(`dump_level);
+	end
 
 	initial begin
 		if($test$plusargs("vcd")) begin
@@ -40,15 +54,7 @@ module vlog_tb_utils;
    		$dumpvars;
 		end
 	end
-	
-	initial begin
-		#1;
-		$display("Start Recording Waveform in FSDB format with cli +fsdb! If not OK, open vlog_tb_utils.v +65!");
-	//$fsdbDumpfile("dump.fsdb");
-	//$fsdbDumpvars(`dump_level);
-	end
-
-
+`endif
 	
 	//Heartbeat timer for simulations
 	reg [63:0] heartbeat;
