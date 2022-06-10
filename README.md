@@ -37,7 +37,8 @@
 	* In linux, just run ./runtest.sh 
 	* if you feel not ok, use vcs. and delete the `--sim_tool iverilog` string
 	* ncverilog & qverilog is ok
-	```
+
+```
 #!/bin/bash
 
 CASE=./case/timer/timer_test.c
@@ -49,7 +50,10 @@ export TOOL_PATH=/eda/riscv/toolchain
 # ../tools/run_case --sim_tool iverilog ../case/timer/timer_test.c
 # ./tools/run_case $CASE
 ./tools/run_case --sim_tool iverilog $CASE
-	```
+```
+
+# orignal bullshit simulation command:
+
 Orignal command is as following, it's a bullshit feeling for windows & linux
     1. cd wujian100_open/tools
     2. vim setup.csh then add the vcs path and license
