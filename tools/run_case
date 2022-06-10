@@ -230,6 +230,11 @@ my $vcs_incdir = " +incdir+../workdir"
 
 my  $g_novas_pli;
 
+my $VERDI_HOME;
+
+	$VERDI_HOME=$ENV{VERDI_HOME};
+ 
+ 
 my  $PLItab="-P $VERDI_HOME/share/PLI/VCS/linux64/novas.tab  $VERDI_HOME/share/PLI/VCS/linux64/pli.a";
 
 
