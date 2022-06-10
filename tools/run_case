@@ -229,8 +229,8 @@ my $vcs_incdir = " +incdir+../workdir"
                         ."+../tb";
 
 my  $g_novas_pli;
-my  $PLItab;
 
+my  $PLItab="-P $VERDI_HOME/share/PLI/VCS/linux64/novas.tab  $VERDI_HOME/share/PLI/VCS/linux64/pli.a";
 
 
 my $top_mod;
