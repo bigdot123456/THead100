@@ -54,6 +54,7 @@ export TOOL_PATH=/eda/riscv/toolchain
 
 # orignal bullshit simulation command: 
 ** Orignal command is as following, it's a bullshit feeling for windows & linux 
+## cmd 
     1. cd wujian100_open/tools
     2. vim setup.csh then add the vcs path and license
     3. source setup.csh         //if not success you can touch a new file named setup.csh and copy the content to the new file. then source the new file
