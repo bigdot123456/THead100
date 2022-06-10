@@ -28,6 +28,29 @@
     centos7/rhel7:  sudo yum install iverilog verilator gtkwave
     ubuntu/debian:  sudo apt-get install iverilog verilator gtkwave
 # Get ready for simulation
+	* In win10, open terminal, run `runtest.cmd`, it will be ok for iverilog.
+	* In win10, if you don't like perl & iverilog, do the following action
+	1. entering workdir
+	2. run `set wujian100_open_PATH=E:/git/wujian100_open`, which is you root directory
+	3. run `qverilog -f $wujian100_open_PATH/filelist.f  +access+` or `qverilog -f $wujian100_open_PATH/filelist.f  +access+`
+	4. If you copy libpli.dll to workdir, fsdb dump will be ok.
+	* In linux, just run ./runtest.sh 
+	* if you feel not ok, use vcs. and delete the `--sim_tool iverilog` string
+	* ncverilog & qverilog is ok
+	```
+#!/bin/bash
+
+CASE=./case/timer/timer_test.c
+
+mkdir -p workdir
+export TOOL_PATH=/eda/riscv/toolchain
+
+# ./tools/run_case --sim_tool iverilog ./case/timer/timer_test.c
+# ../tools/run_case --sim_tool iverilog ../case/timer/timer_test.c
+# ./tools/run_case $CASE
+./tools/run_case --sim_tool iverilog $CASE
+	```
+Orignal command is as following, it's a bullshit feeling for windows & linux
     1. cd wujian100_open/tools
     2. vim setup.csh then add the vcs path and license
     3. source setup.csh         //if not success you can touch a new file named setup.csh and copy the content to the new file. then source the new file
