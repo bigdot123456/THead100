@@ -1,5 +1,6 @@
 #!/bin/bash
-set CASE=./case/timer/timer_test.c
+
+CASE=./case/timer/timer_test.c
 
 mkdir -p workdir
 export TOOL_PATH=/eda/riscv/toolchain
